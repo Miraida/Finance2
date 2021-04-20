@@ -17,6 +17,28 @@
         app:layout_constraintStart_toStartOf="@id/balance_text_tv"
         app:layout_constraintTop_toBottomOf="@id/relative_layout_balance" />
 
+    <ImageView
+        android:id="@+id/expense_minus_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_baseline_minus_24"
+        app:layout_constraintEnd_toEndOf="@id/relative_layout_balance"
+        app:layout_constraintStart_toEndOf="@id/income_plus_iv"
+        app:layout_constraintTop_toTopOf="@id/income_plus_iv" />
+
+    <ImageView
+        android:id="@+id/income_plus_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_baseline_add_circle_24"
+        app:layout_constraintTop_toBottomOf="@id/savings_amount_tv"
+        app:layout_constraintBottom_toTopOf="@id/relative_layout_income"
+        app:layout_constraintEnd_toStartOf="@+id/expense_minus_iv"
+        app:layout_constraintStart_toStartOf="@id/relative_layout_balance" />
+
     <RelativeLayout
         android:id="@+id/relative_layout_balance"
         android:layout_width="match_parent"
@@ -67,85 +89,44 @@
             android:textSize="16sp" />
     </RelativeLayout>
 
-    <TextView
-        android:id="@+id/savings_text_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:fontFamily="@font/roboto_bold"
-        android:text="Сбережения"
-        android:textColor="#0365C4"
-        android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@id/add_savings_iv"
-        app:layout_constraintTop_toTopOf="@id/add_savings_iv" />
-
-    <TextView
-        android:id="@+id/savings_amount_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto_bold"
-        android:text="45 545 $"
-        android:textColor="#0365C4"
-        android:textSize="19sp"
-        app:layout_constraintStart_toStartOf="@id/savings_text_tv"
-        app:layout_constraintTop_toBottomOf="@id/savings_text_tv"
-       />
-       <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/expense_minus_iv"
-        android:layout_marginStart="16dp"
-        app:layout_constraintEnd_toEndOf="@id/relative_layout_balance"
-        app:layout_constraintTop_toTopOf="@id/income_plus_iv"
-        app:layout_constraintStart_toEndOf="@id/income_plus_iv"
-        android:src="@drawable/ic_baseline_minus_24"/>
     <RelativeLayout
+        android:id="@+id/relative_layout_income"
         android:layout_width="105dp"
         android:layout_height="85dp"
-        android:id="@+id/relative_layout_income"
-        app:layout_constraintTop_toBottomOf="@id/add_savings_iv"
-        app:layout_constraintStart_toStartOf="@id/income_plus_iv"
-        app:layout_constraintEnd_toEndOf="@id/income_plus_iv"
-        app:layout_constraintBottom_toTopOf="@id/constraint_layout"
         android:layout_marginTop="24dp"
-        android:background="@drawable/rounded_rec15">
+        android:background="@drawable/rounded_rec15"
+        app:layout_constraintBottom_toTopOf="@id/constraint_layout"
+        app:layout_constraintEnd_toEndOf="@id/income_plus_iv"
+        app:layout_constraintStart_toStartOf="@id/income_plus_iv"
+        app:layout_constraintTop_toBottomOf="@id/add_savings_iv">
+
         <TextView
+            android:id="@+id/income_text_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ДОХОД"
-            android:textSize="12sp"
-            android:id="@+id/income_text_tv"
-            android:fontFamily="@font/roboto_bold"
-            android:textColor="#0365C4"
-            android:layout_marginTop="8dp"
-            android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="12 000$"
-                android:id="@+id/income_amount_tv"
-                android:textSize="19sp"
-                android:fontFamily="@font/roboto_bold"
-                android:textColor="#0365C4"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"/>
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="ДОХОД"
+            android:textColor="#0365C4"
+            android:textSize="12sp" />
 
+        <TextView
+            android:id="@+id/income_amount_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:fontFamily="@font/roboto_bold"
+            android:text="12 000$"
+            android:textColor="#0365C4"
+            android:textSize="19sp" />
 
 
     </RelativeLayout>
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/income_plus_iv"
-        android:src="@drawable/ic_baseline_add_circle_24"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="@id/relative_layout_balance"
-        app:layout_constraintBottom_toTopOf="@id/relative_layout_income"
-        app:layout_constraintEnd_toStartOf="@+id/expense_minus_iv"/>
 
     <RelativeLayout
         android:layout_width="105dp"
@@ -182,118 +163,28 @@
 
     </RelativeLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/savings_text_tv"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/constraint_layout"
-        app:layout_constraintTop_toBottomOf="@id/relative_layout_income"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:background="@drawable/rounded_rec8"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="16dp"
-        android:padding="16dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/frequent_spending_text_tv"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:text="Частые траты"
-            android:layout_marginStart="10dp"
-            android:textSize="20sp"
-            android:textColor="#0365C4"
-            android:fontFamily="@font/roboto_bold"/>
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_coffee"
-                android:id="@+id/coffee_image"
-                android:layout_margin="16dp"
-                app:layout_constraintTop_toBottomOf="@id/frequent_spending_text_tv"
-                app:layout_constraintStart_toStartOf="parent"
-                />
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_margin="16dp"
-                android:id="@+id/shopping_image"
-                android:src="@drawable/ic_shopping"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/coffee_image"/>
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:id="@+id/t_shirt_image"
-                android:layout_margin="16dp"
-                app:layout_constraintTop_toBottomOf="@id/shopping_image"
-                app:layout_constraintStart_toStartOf="parent"
-                android:src="@drawable/ic_t_shirt"
-                />
-              <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/coffee_text_tv"
-                android:text="Кофе"
-                android:textColor="#0365C4"
-                android:fontFamily="@font/roboto_bold"
-                android:textSize="20sp"
-                  app:layout_constraintTop_toTopOf="@id/coffee_image"
-                  app:layout_constraintStart_toEndOf="@id/coffee_image"
-                  android:layout_marginStart="16dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/shopping_text_tv"
-                android:text="Покупки"
-                android:textColor="#0365C4"
-                android:fontFamily="@font/roboto_bold"
-                android:textSize="20sp"
-                app:layout_constraintTop_toTopOf="@id/shopping_image"
-                app:layout_constraintStart_toStartOf="@id/coffee_text_tv"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/t_shirt_text_tv"
-                android:text="одежда"
-                android:textColor="#0365C4"
-                android:fontFamily="@font/roboto_bold"
-                android:textSize="20sp"
-                app:layout_constraintTop_toTopOf="@id/t_shirt_image"
-                app:layout_constraintStart_toStartOf="@id/shopping_text_tv"/>
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/coffee_amount"
-    android:text="200"
-    android:textColor="#0365C4"
-    android:fontFamily="@font/roboto_bold"
-    android:textSize="20sp"
-    app:layout_constraintTop_toTopOf="@id/coffee_text_tv"
-    app:layout_constraintEnd_toEndOf="parent"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/shopping_amount"
-            android:text="200"
-            android:textColor="#0365C4"
-            android:fontFamily="@font/roboto_bold"
-            android:textSize="20sp"
-            app:layout_constraintTop_toTopOf="@id/shopping_text_tv"
-            app:layout_constraintEnd_toEndOf="parent"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/garments_amount"
-            android:text="200"
-            android:textColor="#0365C4"
-            android:fontFamily="@font/roboto_bold"
-            android:textSize="20sp"
-            app:layout_constraintTop_toTopOf="@id/t_shirt_text_tv"
-            app:layout_constraintEnd_toEndOf="parent"/>
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Сбережения"
+        android:textColor="#0365C4"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/add_savings_iv"
+        app:layout_constraintTop_toTopOf="@id/add_savings_iv" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
+    <TextView
+        android:id="@+id/savings_amount_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:text="45 545 $"
+        android:textColor="#0365C4"
+        android:textSize="19sp"
+        app:layout_constraintStart_toStartOf="@id/savings_text_tv"
+        app:layout_constraintTop_toBottomOf="@id/savings_text_tv" />
 
     <TextView
         android:id="@+id/balance_text_tv"
@@ -304,7 +195,46 @@
         android:text="БАЛАНС"
         android:textColor="#0365C4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/recyclerView" />
+        app:layout_constraintTop_toBottomOf="@id/recyclerView"
+        app:layout_constraintBottom_toTopOf="@id/relative_layout_balance"/>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/rounded_rec8"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/relative_layout_income">
+
+        <TextView
+            android:id="@+id/frequent_spending_text_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Частые траты"
+            android:textColor="#0365C4"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/expenses_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/frequent_spending_text_tv"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -312,8 +242,8 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintTop_toBottomOf="@id/relative_layout"
         app:layout_constraintBottom_toTopOf="@id/balance_text_tv"
+        app:layout_constraintTop_toBottomOf="@id/relative_layout"
         tools:listitem="@layout/item_rv" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

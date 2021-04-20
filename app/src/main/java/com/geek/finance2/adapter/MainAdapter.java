@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.geek.finance2.R;
 import com.geek.finance2.model.RVModel;
 import com.geek.finance2.databinding.ItemRvBinding;
 
@@ -15,9 +16,18 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder
     ArrayList<RVModel> list;
     ItemRvBinding binding;
 
-    public MainAdapter(ArrayList<RVModel> list) {
-        this.list = list;
+    private void addListItem(RVModel model) {
+        list.add(model);
     }
+
+    public MainAdapter() {
+        list = new ArrayList<>();
+        list.add(new RVModel("СОВЕТЫ", R.drawable.ic_advice));
+        list.add(new RVModel("РАСХОДЫ", R.drawable.ic_currency_usd));
+        list.add(new RVModel("ПОКУПКИ", R.drawable.ic_cart_outline));
+        list.add(new RVModel("СОВЕТЫ", R.drawable.ic_advice));
+    }
+
     @NonNull
     @Override
     public MainViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
